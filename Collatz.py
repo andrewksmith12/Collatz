@@ -26,21 +26,26 @@ def collatz_read(s):
 
 
 def collatz_eval(i, j):
-    evalList = []
+    evalDict = {}
     for n in range (i,j+1):
         i = n
         c = 1
         while i >= 1:
             if i == 1:
-                evalList.append(c)
+                evalDict[n] = c
                 break
-            if (i % 2 == 0):
-                i = i//2
-                c = c + 1
+            if i in evalDict.keys():
+                dictVal = evalDict[i]
+                c = c + dictVal - 1
+                i = 1
             else:
-                i = (3 * i) + 1
-                c = c + 1
-    return max(evalList)
+                if (i % 2 == 0):
+                    i = i//2
+                    c = c + 1
+                else:
+                    i = (3 * i) + 1
+                    c = c + 1
+    return max(evalDict.values())
 
 # -------------
 # collatz_print
