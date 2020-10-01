@@ -8,3 +8,4 @@ __pycache__
 cs330e-collatz-tests
 requirements-to-freeze.txt
 .vs
+env
