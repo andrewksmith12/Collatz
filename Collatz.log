@@ -1,0 +1,47 @@
+commit 8dd7660e5e7ed9a931af7a246cf6b3881a66d50d
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Wed Sep 30 21:08:58 2020 -0500
+
+    Add simple optimization dictionary
+
+commit b3b99cb28c699a70e857782cf3c029ce8d1fba35
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Wed Sep 30 20:34:46 2020 -0500
+
+    Fix test_solve function, fix collatz_solve
+
+commit 7380cce451ac13b4fdd9573e7a2fc77800c07111
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Wed Sep 30 20:31:05 2020 -0500
+
+    Change Read Collatz, retest.
+
+commit 8efce7776132b9dc5f763011a16001ec52e160b7
+Author: andrewksmith12 <43506065+andrewksmith12@users.noreply.github.com>
+Date:   Tue Sep 29 10:00:35 2020 -0500
+
+    Added temporary test to AKS_TEST to better understand program.
+
+commit b65f90d9a3c2fae20d7e1cda78057355c3a36e95
+Author: andrewksmith12 <43506065+andrewksmith12@users.noreply.github.com>
+Date:   Wed Sep 23 23:26:55 2020 -0500
+
+    Create EvalCollatz, fix Test Collatz
+
+commit 45a3cbe33c6dfe7a910e989af9ed781ec5abbe33
+Author: Fares Fraij <fares@utexas.edu>
+Date:   Sat Jun 6 10:35:45 2020 -0500
+
+    second commit
+
+commit 0cd09a5c9fb1a857dce11686104ab052d42b269b
+Author: Fares Fraij <fares@utexas.edu>
+Date:   Fri May 29 11:11:36 2020 -0500
+
+    first commit
+
+commit 3390fe29f60392d73e1810e7b55331c613e4a1c5
+Author: Fares Fraij <fares@utexas.edu>
+Date:   Fri May 29 16:02:55 2020 +0000
+
+    Initial commit
