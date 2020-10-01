@@ -63,8 +63,7 @@ def collatz_print(w, i, j, v):
 
 
 def collatz_solve(r, w):
-    list = r.split("\n")
-    for s in list:
+    for s in r:
         i, j = collatz_read(s)
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
