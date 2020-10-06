@@ -32,6 +32,16 @@ class TestCollatz (TestCase):
         i, j = collatz_read(s)
         self.assertEqual(i,  1)
         self.assertEqual(j, 10)
+    def test_read_2(self):
+        s = "20 30\n"
+        i, j = collatz_read(s)
+        self.assertEqual(i,  20)
+        self.assertEqual(j, 30)
+    def test_read_3(self):
+        s = "500 9990\n"
+        i, j = collatz_read(s)
+        self.assertEqual(i,  500)
+        self.assertEqual(j, 9990)
 
     # ----
     # eval
@@ -61,6 +71,14 @@ class TestCollatz (TestCase):
         w = StringIO()
         collatz_print(w, 1, 10, 20)
         self.assertEqual(w.getvalue(), "1 10 20\n")
+    def test_print_2(self):
+        w = StringIO()
+        collatz_print(w, 2654, 5727, 238)
+        self.assertEqual(w.getvalue(), "2654 5727 238\n")
+    def test_print_3(self):
+        w = StringIO()
+        collatz_print(w, 100, 200, 125)
+        self.assertEqual(w.getvalue(), "100 200 125\n")
 
     # -----
     # solve
@@ -72,12 +90,25 @@ class TestCollatz (TestCase):
         collatz_solve(r, w)
         self.assertEqual(
             w.getvalue(), "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
+    def test_solve_2(self):
+        r = StringIO("2654 5727\n1198 3578\n2822 5647\n1430 8390\n")
+        w = StringIO()
+        collatz_solve(r, w)
+        self.assertEqual(
+            w.getvalue(), "2654 5727 238\n1198 3578 217\n2822 5647 238\n1430 8390 262\n")
+
+    def test_solve_3(self):
+        r = StringIO("587 6536\n2570 6440\n1168 9797\n8916 9620\n")
+        w = StringIO()
+        collatz_solve(r, w)
+        self.assertEqual(
+            w.getvalue(), "587 6536 262\n2570 6440 262\n1168 9797 262\n8916 9620 260\n")
 
 # ----
 # main
 # ----
 
-if __name__ == "__main__":
+if __name__ == "__main__": #pragma: no cover
     main()
 
 """ #pragma: no cover
