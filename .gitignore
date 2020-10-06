@@ -9,3 +9,4 @@ cs330e-collatz-tests
 requirements-to-freeze.txt
 .vs
 env
+collatz.pyc
