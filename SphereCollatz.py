@@ -1,38 +1,24 @@
-#!/usr/bin/env python3
-
-# ---------------------------
-# projects/collatz/Collatz.py
-# Copyright (C) 2016
-# Glenn P. Downing
-# ---------------------------
-
-# ------------
-# collatz_read
-# ------------
-
+import sys
 
 def collatz_read(s):
-    """
-    read two ints
-    s a string
-    return a list of two ints, representing the beginning and end of a range, [i, j]
-    """
     a = s.split()
     return [int(a[0]), int(a[1])]
 
-# ------------
-# collatz_eval
-# ------------
-
+evalDict = {}
 
 def collatz_eval(i, j):
-    evalDict = {}
+    localDict = {}
+    if i > j:
+            tmp = j
+            j = i
+            i = tmp
     for n in range (i,j+1):
         i = n
         c = 1
-        while i >= 1: 
+        while i >= 1:
             if i == 1:
                 evalDict[n] = c
+                localDict[n] = c
                 break
             if i in evalDict.keys():
                 dictVal = evalDict[i]
@@ -45,27 +31,10 @@ def collatz_eval(i, j):
                 else:
                     i = (3 * i) + 1
                     c = c + 1
-    return max(evalDict.values())
-
-# -------------
-# collatz_print
-# -------------
-
+    return max(localDict.values())
 
 def collatz_print(w, i, j, v):
-    """
-    print three ints
-    w a writer
-    i the beginning of the range, inclusive
-    j the end       of the range, inclusive
-    v the max cycle length
-    """
     w.write(str(i) + " " + str(j) + " " + str(v) + "\n")
-
-# -------------
-# collatz_solve
-# -------------
-
 
 def collatz_solve(r, w):
     for s in r:
@@ -74,3 +43,5 @@ def collatz_solve(r, w):
         i, j = collatz_read(s)
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
+collatz_solve(sys.stdin, sys.stdout)
