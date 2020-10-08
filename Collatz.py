@@ -34,22 +34,23 @@ def collatz_eval(i, j):
     for n in range(i, j+1):
         i = n
         c = 1
-        while i >= 1:
-            if i == 1:
+        while i >= 1:  # i will always be greater than one. This keeps the code looping until break.
+            if i == 1:  # Once the current state reaches 1, add it to the dict and break so the next num can run.
                 evalDict[n] = c
                 break
+            # Check if current int is in dict, if it is, add it's cycle count to the current one and let loop continue.
             if i in evalDict.keys():
                 dictVal = evalDict[i]
                 c = c + dictVal - 1
                 i = 1
-            else:
+            else:  # Otherwise, do the math for collatz.
                 if (i % 2 == 0):
                     i = i//2
                     c = c + 1
                 else:
                     i = (3 * i) + 1
                     c = c + 1
-    return max(evalDict.values())
+    return max(evalDict.values())  # return the max value
 
 # -------------
 # collatz_print
@@ -76,7 +77,7 @@ def collatz_solve(r, w):
     Use the sub-functions to solve collatz and process the stinput
     """
     for s in r:
-        if not s.strip():
+        if not s.strip():  # Skips blank lines
             continue
         i, j = collatz_read(s)
         v = collatz_eval(i, j)

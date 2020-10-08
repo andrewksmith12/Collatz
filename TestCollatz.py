@@ -111,6 +111,7 @@ class TestCollatz (TestCase):
         collatz_solve(r, w)
         self.assertEqual(
             w.getvalue(), "587 6536 262\n2570 6440 262\n1168 9797 262\n8916 9620 260\n")
+
     def test_solve_4(self):
         r = StringIO("587 6536\n2570 6440\n1168 9797\n\n")
         w = StringIO()
