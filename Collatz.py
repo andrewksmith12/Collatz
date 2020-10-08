@@ -26,11 +26,15 @@ def collatz_read(s):
 
 
 def collatz_eval(i, j):
+    """
+    create a dictionary to cache values, 
+    return the max value between the range, [i,j]
+    """
     evalDict = {}
-    for n in range (i,j+1):
+    for n in range(i, j+1):
         i = n
         c = 1
-        while i >= 1: 
+        while i >= 1:
             if i == 1:
                 evalDict[n] = c
                 break
@@ -68,6 +72,9 @@ def collatz_print(w, i, j, v):
 
 
 def collatz_solve(r, w):
+    """
+    Use the sub-functions to solve collatz and process the stinput
+    """
     for s in r:
         if not s.strip():
             continue
