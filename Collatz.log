@@ -1,3 +1,9 @@
+commit e1777dd5dfabe6c575f42b5153fe8a10fbb83050
+Author: andrewksmith12 <43506065+andrewksmith12@users.noreply.github.com>
+Date:   Wed Oct 7 19:46:39 2020 -0500
+
+    Fixes SphereCollatz.py, adds unit test for blank line, adds handling in Collatz.py for blank line, close #14 close #15
+
 commit 1675f9e0e294f0582bc05399fc0383442ea4d392
 Author: andrewksmith12 <43506065+andrewksmith12@users.noreply.github.com>
 Date:   Tue Oct 6 08:53:52 2020 -0500
